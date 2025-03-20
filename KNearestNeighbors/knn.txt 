@@ -17,3 +17,11 @@ The K Nearest Neighbor (KNN) algorithm is a simple, non-parametric machine learn
     (3) predicting the class or value of the query point based on the majority class or the mean value of the neighbors, respectively. 
     
     The choice of the distance metric and the value of k are important parameters in the KNN algorithm.
+
+
+- There are many different distance metrics you can choose from, with the most common being Euclidean distance. Other possible distance metrics include Manhattan distance, Minkowski distance, Hamming distance, and Cosine distance. These distance metrics define the decision boundaries for the corresponding partitions of data. The “right” distance metric to choose depends on the problem at hand. 
+
+- With respect to choosing the appropriate value of k, this will largely depend on the input dataset. 
+- The k value determines the number of data points that the algorithm considers when predicting the value/label of a new data point. 
+- A larger value of k considers more data points, resulting in a smoother decision boundary, but may lead to underfitting. 
+- A smaller value of k considers fewer data points, resulting in a more complex decision boundary and may lead to overfitting.
