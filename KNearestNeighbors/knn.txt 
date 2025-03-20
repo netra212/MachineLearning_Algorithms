@@ -25,3 +25,11 @@ The K Nearest Neighbor (KNN) algorithm is a simple, non-parametric machine learn
 - The k value determines the number of data points that the algorithm considers when predicting the value/label of a new data point. 
 - A larger value of k considers more data points, resulting in a smoother decision boundary, but may lead to underfitting. 
 - A smaller value of k considers fewer data points, resulting in a more complex decision boundary and may lead to overfitting.
+
+
+# Applications:
+1. Image Classification:
+- The KNN algorithm can be used in image classification tasks by representing each image as a feature vector and then applyig the KNN algorithm to the set of feature vectors.
+- One common approach is to use the pixel values of an image as the features. For example, an RGB image with dimensions 100×100 pixels can be represented as a feature vector of length 30,000 (100x100x3), where each element of the vector corresponds to the pixel value of the corresponding RGB channel.
+- Once the feature vectors are extracted from the images, the KNN algorithm can be used to classify new images by finding the k nearest neighbors of the new image’s feature vector in the training set and assigning the new image to the majority class among its neighbors.
+- However, using pixel values as features can result in high-dimensional feature vectors that are computationally expensive to process. To address this issue, techniques like Principal Component Analysis (PCA) and Convolutional Neural Networks (CNNs) can be used to reduce the dimensionality of the feature vectors and extract more meaningful features that can improve the accuracy of the KNN algorithm.
