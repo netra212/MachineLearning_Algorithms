@@ -76,3 +76,30 @@ CODE:
     # Fit the scaler to the feature set and transform it
     X_scaled = scaler.fit_transform(X)
 */
+
+# Choosing K Value.
+
+- After scaling the data, we need to choose our hyperparameters (i.e., the value of k). Hyperparameters refer to parameters that we choose for the algorithm, or in other words, the parameters that aren’t learned during training. Choosing the right value of k is critical for the performance of the KNN algorithm. If k is too small, the algorithm may be overly sensitive to noise in the data, which can lead to overfitting. On the other hand, if k is too large, the algorithm may oversimplify the decision boundaries and fail to capture important patterns in the data, which can lead to underfitting.
+
+- The best value of k depends on the specific dataset and problem that we are working with. Generally, smaller values of k are better suited for datasets with a lot of noise or with complex decision boundaries, while larger values of k are better suited for datasets with smoother decision boundaries.
+
+- One common technique for choosing the optimal value of k is to use cross -validation, where we split the data into training and testing sets multiple times and evaluate the algorithm’s performance for different values of k. This allows us to choose the value of k that results in the best overall performance on the dataset.
+
+/*
+
+from sklearn.model_selection import cross_val_score
+from sklearn.neighbors import KNeighborsClassifier
+
+# Perform cross-validation for different values of k
+k_values = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
+cv_scores = []
+
+for k in k_values:
+    knn = KNeighborsClassifier(n_neighbors=k)
+    scores = cross_val_score(knn, X_scaled, y, cv=10, scoring='accuracy')
+    cv_scores.append(scores.mean())
+
+# Find the optimal value of k
+optimal_k = k_values[cv_scores.index(max(cv_scores))]
+
+*/
