@@ -103,3 +103,71 @@ for k in k_values:
 optimal_k = k_values[cv_scores.index(max(cv_scores))]
 
 */
+
+- It’s also important to note that the choice of k is not the only hyperparameter that can affect the performance of the KNN algorithm. Other factors, such as the distance metric used to measure distances between data points, can also have a significant impact on the algorithm’s performance. Therefore, it’s important to experiment with different hyperparameters and evaluate their impact on the algorithm’s performance.
+
+# Measuring Performance
+- After choosing hyperparameters and training the model, we now need to evaluate our model’s performance. This comes in 2 steps – choosing a performance metric and evaluating the model on a new dataset with that performance metric.
+
+- The choice of performance metric largely depends on the problem that KNN is trying to solve. 
+
+Important:
+- Some common classification metrics include accuracy, precision, recall, f1 score, ROC AUC, and PR AUC. 
+
+- Common regression metrics include MSE, RMSE, MAE, and R2.
+
+- The right metric to choose also depends heavily on the dataset. For example, choosing accuracy as the evaluation metric for highly imbalanced datasets is often not as good of a metric as precision or recall. Take a dataset that has 98% of examples in the majority class, and the other 2% of examples belong to the other class. If our model just predicted the majority class each time, we would achieve roughly 98% accuracy, which is a false representation of how well our model can differentiate between the two classes.
+
+- Once the metric is chosen, there are several ways to evaluate the performance of the KNN algorithm, each with its own benefits and limitations. Two common approaches are cross -validation and training/testing split. Overall, both cross -validation and training/testing split are useful approaches for evaluating the performance of the KNN algorithm, and the choice between them depends on the specific problem and the available resources. Training/testing split is a quick and easy way to evaluate the performance of the algorithm, but it may suffer from overfitting or underfitting. Cross -validation provides a more reliable estimate of performance, but can be computationally expensive.
+
+- In our example above, we captured the average of the cross validation scores for each value of k that we tested. Thus, we already have our cross validation score saved in the cv_scores array.
+
+/*
+    # Get the best cv score from the cv_scores array 
+    best_cv_score = cv_scores[cv_scores.index(max(cv_scores))] 
+*/
+
+#. Limitations of KNN Algorithm
+1. Curse of Dimensionality
+    The curse of dimensionality is a term used to describe the challenge of working with high-dimensional data. In a high-dimensional space, the distance between points becomes less meaningful as the number of dimensions increases. This is because the volume of the space increases exponentially with the number of dimensions, which leads to a sparse distribution of data points. As a result, the nearest neighbors to a given point may be very far away, making it difficult to find a reliable set of neighbors to use in the KNN algorithm.
+
+    In addition, as the number of dimensions increases, the amount of data required to represent the space effectively also increases. This means that as the number of dimensions grows, the amount of data required to produce reliable results can become prohibitively large. As a result, the computational cost of the KNN algorithm can become very high, making it difficult to use in practical applications.
+
+    To address the curse of dimensionality, various techniques have been developed, such as feature selection, dimensionality reduction, and data preprocessing. These techniques can help to reduce the number of dimensions in the data, making it more manageable and easier to work with. Additionally, other algorithms that are less sensitive to high-dimensional data, such as decision trees, neural networks, or support vector machines, may be used as an alternative to KNN.
+
+2. Imbalanced data
+    Imbalanced data can also affect the performance of the KNN algorithm by affecting the distance calculation between samples. Recall that KNN is a distance-based algorithm that computes the distances between samples to find the k-nearest neighbors. In imbalanced datasets, the samples of the minority class are often sparse and scattered, and the majority class dominates the feature space. As a result, the distances between the minority class samples may be higher, and the distances between the majority class samples may be lower, leading to misclassifications.
+
+    One solution is to use resampling techniques to balance the dataset. Resampling techniques can either oversample the minority class by creating synthetic samples or undersample the majority class by removing some samples. This way, the density of the minority class samples can be increased, and the distances between the minority class samples can be reduced, leading to better classification performance. However, it is important to be careful with resampling techniques as they can introduce bias and lead to overfitting. Therefore, it is recommended to use cross -validation or other evaluation metrics to validate the performance of the model.
+
+3. Computationally Expensive
+
+    The computational complexity of the KNN algorithm mainly depends on the size of the dataset, the number of features, and the value of k. The time complexity of the KNN algorithm for a single query point is O(nd), where n is the number of training examples and d is the number of features. This is because for each query point, the algorithm needs to compute the distance between the query point and every other point in the dataset. As the number of features or the size of the dataset increases, the computational complexity of KNN also increases significantly, making it computationally expensive and impractical for large datasets. Additionally, finding the optimal value of k by brute force can also increase the time complexity of the algorithm.
+
+----------------------------
+# Improving KNN Algorithm:
+----------------------------
+
+1. Feature selection:
+    Feature selection refers to the process of selecting a subset of relevant features from a larger set of features in a dataset. The aim of feature selection is to remove irrelevant and redundant features, thereby improving the performance of the algorithm.
+
+    In the case of KNN, feature selection can be used to improve performance in several ways. One of the main benefits is that it can reduce the dimensionality of the dataset, which in turn can significantly reduce the computational complexity of the algorithm. This is particularly important in large datasets where the number of features can be very high.
+
+    By reducing the dimensionality of the dataset, feature selection can also help to remove noisy and irrelevant features, which can reduce overfitting and improve the accuracy of the algorithm. Furthermore, by reducing the number of features, feature selection can also help to improve the generalization of the algorithm, making it more robust to new data.
+
+    Overall, feature selection can be a powerful tool for improving the performance of KNN, particularly in cases where the number of features is high, and computational complexity is a concern.
+
+2. Dimensionality Reduction Algorithms
+    Similarly to feature selection, dimensionality reduction algorithms can help with KNN performance by reducing the number of features or variables used in the distance calculation, thus reducing the computational complexity of the algorithm. These algorithms aim to find a lower-dimensional representation of the data that retains most of the information.
+
+    For example, Principal Component Analysis (PCA) is a commonly used dimensionality reduction technique that transforms the data into a lower-dimensional space by projecting the original data onto a smaller number of principal components, which are linear combinations of the original features. The principal components are chosen in such a way that they explain most of the variance in the data. By using PCA, one can reduce the number of features used in the distance calculation while retaining most of the information in the data.
+
+    Other dimensionality reduction algorithms include SNE, t-SNE, and UMAP. To read more about these algorithms, check out our blog post on dimensionality reduction.
+
+3. Ensemble Methods
+    Ensemble methods can improve the performance of KNN by combining the predictions of multiple KNN models. One way to do this is by using a technique called bagging, where multiple KNN models are trained on different subsets of the data, and their predictions are combined through averaging or voting. Another way is by using boosting, where KNN models are sequentially trained on the data, with each subsequent model focused on correcting the errors of the previous ones. By combining multiple models, ensemble methods can improve the stability and robustness of KNN, and reduce the impact of noisy or irrelevant features in the data.
+
+--------------------
+#. Conclusion
+--------------------
+- While KNN has several advantages such as ease of implementation, interpretability, and no assumptions about data distribution, it also has its limitations. The algorithm is sensitive to the choice of k, and can be affected by the curse of dimensionality, imbalanced data, and computational complexity issues. However, with appropriate preprocessing steps such as scaling, feature selection, and dimensionality reduction, as well as the use of ensemble methods, these limitations can be mitigated. Overall, KNN is a valuable tool in the machine learning toolbox and can be useful in a variety of real-world applications.
