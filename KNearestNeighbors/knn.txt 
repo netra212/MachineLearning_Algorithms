@@ -54,3 +54,25 @@ Once the feature vectors are extracted from the text documents, the KNN algorith
 
 However, similarly to using pixel values as features for image classification, using the bag-of-words model as features can result in high-dimensional feature vectors that are computationally expensive to process. To address this issue, techniques like Term Frequency-Inverse Document Frequency (TF-IDF) weighting and word embeddings can be used to represent the documents as lower-dimensional feature vectors that can improve the accuracy of the KNN algorithm.
 
+------------------------
+# Implementation
+------------------------
+
+-> Preprocessing Data
+
+- Before applying KNN, it is essential to preprocess the data to remove any noise, outliers, and missing values. This can involve techniques such as scaling or normalizing the data, imputing missing values, or reducing the dimensionality of the data.
+
+- Scaling the data is an important preprocessing step for the KNN algorithm because the algorithm is distance-based. If the data is not scaled, features with larger scales will dominate the distance calculation and can result in incorrect classifications. For example, consider a dataset with two features, one of which is age (ranging from 0 to 100) and the other is income (ranging from 0 to 1,000,000). If the data is not scaled, the distance calculation will be dominated by the income feature, and the age feature will have a much smaller impact on the classification decision. This can lead to inaccurate classifications, especially if the features have very different scales. Scaling the data ensures that some features don’t dominate others just because of the magnitude of the values.
+
+- Scaling the features can improve the accuracy of the KNN algorithm and ensure that it’s robust to changes in the scale of the data. Standardization is one common scaling technique that is often used for KNN, as it transforms the data to have a mean of 0 and a standard deviation of 1, which can help to mitigate the effects of differences in scale between features.
+
+/*
+CODE:
+    from sklearn.preprocessing import StandardScaler
+
+    # Create a StandardScaler object
+    scaler = StandardScaler()
+
+    # Fit the scaler to the feature set and transform it
+    X_scaled = scaler.fit_transform(X)
+*/
