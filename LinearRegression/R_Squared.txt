@@ -1,0 +1,21 @@
+# R-sqaured tells the strength of the relationships. Tells the goodness of fit. 
+
+R-squared = ESS / TSS 
+          = (TSS - RSS) / TSS 
+          = 1 - (RSS/TSS)
+
+- R-squared (R^2) --> coefficients of determination --> measure used in the regression analysis to assess the goodness-of-fit of a model. 
+- It quantifies the proportion of variance in the dependent variable (response variable) that can be explained by the independent variables (predictor variables) in the regression model. 
+- R-squared is a value between 0 & 1, with the higher values indicating a better fit of the model to the observed data. 
+
+In the context of a simple linear regression, R^2 is calculated as the square of the correlation coefficients (r) between the observed & predicted values. 
+- In Multiple regression, R^2 is obtained from the ratio of the explained sum of square (ESS) to total sum of squares (TSS).
+
+- R2 = ESS/TSS
+
+where:
+    - ESS (Explained Sum of Squares): 
+        - sum of squared differences between the predicted values and the mean of the observed values. It represent the variation in the response variable that can be explained by the predictor variable in the model. 
+        - TSS (Total sum of squares) is the sum of squared differences between the observed values and the mean of the observed values. It represent the total variation in the response variable. 
+
+Note:- An R-squared value of 0 indicates that the model does not explain any of the variance in the response variable, while an R-squared value of 1 indicates that the model explains all of the variance. However, R-squared can be misleading in some cases, especially when the number of predictor variables is large or when the predictor variables are not relevant to the response variable.

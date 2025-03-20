@@ -1,0 +1,2 @@
+# This is the feature extraction techniques. 
+# Point to Remember: This is not the feature selection technique. 

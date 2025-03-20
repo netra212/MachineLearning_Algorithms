@@ -1,0 +1,18 @@
+# T-statistic:
+
+- Performing a t-test fore a simple linear regression, including the intercept term and using the p-value approach, involves the following steps:
+    1. state the null & alternative hypothesis for the slope and intercept coefficients:
+        For the slope coefficients (B1):
+            Null hypothesis (H0): β1 = 0 (no relationship between the
+            predictor variable (X) and the response variable (y))
+        
+        For the intercept coefficient (β0):
+            Null hypothesis (H0): β0 = 0 (the regression line passes through the origin)
+            Alternative hypothesis (H1): β0 does not equal to zero. (the regression line does not pass through the origin).
+
+    2. Estimate the slope and intercept coefficient (b0 and b1): 
+        Using the sample data, calculate the slope (b1) and intercept (b0) coefficients for the regression model.
+    
+    3. Calculate the standard errors for the slope and intercept coefficients (SE(b0) and SE(b1)): Compute the standard errors of the slope and intercept coefficients using the following formulas:
+
+    
