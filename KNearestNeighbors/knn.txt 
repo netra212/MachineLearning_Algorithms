@@ -171,3 +171,12 @@ Important:
 #. Conclusion
 --------------------
 - While KNN has several advantages such as ease of implementation, interpretability, and no assumptions about data distribution, it also has its limitations. The algorithm is sensitive to the choice of k, and can be affected by the curse of dimensionality, imbalanced data, and computational complexity issues. However, with appropriate preprocessing steps such as scaling, feature selection, and dimensionality reduction, as well as the use of ensemble methods, these limitations can be mitigated. Overall, KNN is a valuable tool in the machine learning toolbox and can be useful in a variety of real-world applications.
+
+- Which distance metrics is suitable for categorical data in the K-Nearest Neighbors (KNN) algorithm ?
+-> Hamming Distance. 
+
+- Which distance metric is appropriate for text documents in the K-Nearest Neighbors (KNN) algorithm ?
+-> Cosine Similarity. 
+
+- Which Distance metrics is less sensitive to outliers in the K-Nearest Neighbors (KNN) Algorithm ?
+-> Manhattan Distance. 
