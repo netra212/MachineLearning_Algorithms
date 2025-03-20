@@ -1,4 +1,19 @@
 # KNN
 The K Nearest Neighbor (KNN) algorithm is a simple, non-parametric machine learning algorithm used for both classification and regression tasks. It is based on the assumption that similar items are close to each other in a feature space. KNN works by finding the k-nearest neighbors to a given query point, and predicting the class or value of the query point based on the classes or values of its neighbors.
 
+------------------------------------------------
+# What is the K Nearest Neighbor Algorithm?
+------------------------------------------------
 
+# Definition of KNN
+
+- The KNN algorithm is a type of instance-based learning, or lazy learning. It involves storing all available cases and classifying new cases based on a similarity measure (e.g., distance functions). The basic idea of KNN is to find the k-nearest neighbors to a given query point and use their class labels (in the case of classification) or their values (in the case of regression) to make a prediction for the query point.
+
+# How it works ?
+- KNN works in three main steps: 
+
+    (1) calculating the distance between the query point and each training point, 
+    (2) selecting the k-nearest neighbors to the query point, and 
+    (3) predicting the class or value of the query point based on the majority class or the mean value of the neighbors, respectively. 
+    
+    The choice of the distance metric and the value of k are important parameters in the KNN algorithm.
