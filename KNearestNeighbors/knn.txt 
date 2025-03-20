@@ -33,3 +33,24 @@ The K Nearest Neighbor (KNN) algorithm is a simple, non-parametric machine learn
 - One common approach is to use the pixel values of an image as the features. For example, an RGB image with dimensions 100×100 pixels can be represented as a feature vector of length 30,000 (100x100x3), where each element of the vector corresponds to the pixel value of the corresponding RGB channel.
 - Once the feature vectors are extracted from the images, the KNN algorithm can be used to classify new images by finding the k nearest neighbors of the new image’s feature vector in the training set and assigning the new image to the majority class among its neighbors.
 - However, using pixel values as features can result in high-dimensional feature vectors that are computationally expensive to process. To address this issue, techniques like Principal Component Analysis (PCA) and Convolutional Neural Networks (CNNs) can be used to reduce the dimensionality of the feature vectors and extract more meaningful features that can improve the accuracy of the KNN algorithm.
+
+2. Sentiment Analysis:
+- The KNN algorithm can be used in sentiment classification tasks by representing each text document as a feature vector, and then applying the KNN algorithm to the set of feature vectors. The process of transforming text (i.e., unstructured data) into vector representations is known as tokenization. 
+
+- One common approach is to represent each document as a bag-of-words model, where each feature corresponds to a unique word in the vocabulary, and the value of each feature is the frequency of the corresponding word in the document. For example, consider the following two documents:
+
+    Document 1: “The movie was excellent and I highly recommend it.”
+
+    Document 2: “The movie was terrible and I do not recommend it.”
+
+The vocabulary for these documents might be: [“the”, “movie”, “was”, “excellent”, “and”, “i”, “highly”, “recommend”, “terrible”, “do”, “not”]. The feature vectors for these documents would then be:
+
+    Document 1: [1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0]
+
+    Document 2: [1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1]
+
+
+Once the feature vectors are extracted from the text documents, the KNN algorithm can be used to classify new documents by finding the k nearest neighbors of the new document’s feature vector in the training set and assigning the new document to the majority class among its neighbors.
+
+However, similarly to using pixel values as features for image classification, using the bag-of-words model as features can result in high-dimensional feature vectors that are computationally expensive to process. To address this issue, techniques like Term Frequency-Inverse Document Frequency (TF-IDF) weighting and word embeddings can be used to represent the documents as lower-dimensional feature vectors that can improve the accuracy of the KNN algorithm.
+
