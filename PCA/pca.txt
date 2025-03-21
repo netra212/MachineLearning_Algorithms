@@ -1,2 +1,7 @@
 # This is the feature extraction techniques. 
 # Point to Remember: This is not the feature selection technique. 
+
+# features -> dimensional. 
+# f_n < f_m
+# Curse of Dimensionality:
+-> It says that whenever we add the more and more features, the accuracy of the model get increased but there is a point where a accuracy of the model start to decrease so we have select the optimal number of features. 
