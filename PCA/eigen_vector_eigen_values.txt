@@ -1,0 +1,14 @@
+
+# Eigen Vectors:
+A.V_vector = Lambda. V_vector
+- Special vector, because direction of the vector does not change or span of the vector does not change. 
+- Direction of vector does not change occurs applying linear transformation. 
+
+Note:- Largest Eigen Vectors of the covariance matrix always points into the direction of the largest variance of the data, and magnitude of this vectors equals the corresponding eigen values. 
+
+#. Step by Step Solution:-
+    1. mean center the data. 
+    2. calculate the co-variance matrix. 
+    3. find the eigen vectors and eigne values. 
+
+# How to transform points ?
