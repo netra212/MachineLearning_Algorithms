@@ -37,3 +37,11 @@ Benefits:
 # What Are Principal Components ?
 - Principal components are new variables that are constructed as linear combinations or mixtures of the initial variables. These combinations are done in such a way that the new variables (i.e., principal components) are uncorrelated and most of the information within the initial variables is squeezed or compressed into the first components. So, the idea is 10-dimensional data gives you 10 principal components, but PCA tries to put maximum possible information in the first component, then maximum remaining information in the second and so on, until having something like shown in the scree plot below.
 
+# PCA -> Forgets about the existing features and build the new complete sets of the features and PCA choose the new subset from the new set of feature which PCA thinks that particular feature is importance 
+    - our datasets:
+    room | washrooms | price 
+
+    - pca build this features:
+    size | price
+
+Note:- Spread is not exactly the variance but variance is proportion to the spread. 
