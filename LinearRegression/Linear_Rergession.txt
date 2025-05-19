@@ -1,0 +1,12 @@
+
+Linear Regression
+- supervised ml algorithms used for predicting a continous numerical value based on one or more input features. 
+- It assumes a linear relationships between the inputs variables (independent) and output variables (dependent).
+
+# Assumptions of Linear Regression:
+- Linearity between features and output.
+- Independence of errors.
+- Homoscedasticity (constant variance of errors).
+- No multicollinearity (in multiple regression).
+- Errors are normally distributed.
+
