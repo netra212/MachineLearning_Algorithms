@@ -2,8 +2,34 @@
 # Why ML Problems are a statistical Inference Problem ?
 Question Understanding: With the help of sample, we try to find the estimate value for the value <-- this is called statistical inference problem.
 Ans:- lpa = f`(cgpa, iq) + reducible_error + irreducible_error
+
+Reasons:
+    1. ML Algorithms try to learn the parameters or relationships from data to make predictions or decisions. This is conceptually similar to what statistical models do: estimate parameters from data to explain or predict a phenomenon.
+
+    2. Uncertainty & Probabilistic Thinking
+    ML operates in environments full of noise and uncertainty, just like statistics:
+        Data can be noisy or incomplete.
+        Predictions are not always exact — they have confidence intervals, probability scores, etc.
+        This requires a statistical framework to quantify uncertainty and make decisions under it.
+    
+    3. Model Training = Statistical Estimation
+        Training an ML model is often about minimizing a loss function, which is analogous to maximum likelihood estimation (MLE) or Bayesian inference in statistics. 
+        For example:
+            -> Linear Regression: Minimizing squared error (MLE under Gaussian noise)
+            -> Logistic Regression: MLE under a Bernoulli likelihood  
+
+Machine Learning Concept	Statistical Equivalent
+Training a model	        Estimating parameters
+Loss function	            Likelihood/Cost of error
+Generalization	            Statistical inference
+Model evaluation	        Hypothesis testing / Metrics
+Regularization	            Prior belief / Bayesian thinking
 '''
 
+'''
+# Inference Vs Prediction
+
+'''
 import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.linear_model import LinearRegression
