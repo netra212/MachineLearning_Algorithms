@@ -14,5 +14,3 @@
         Using the sample data, calculate the slope (b1) and intercept (b0) coefficients for the regression model.
     
     3. Calculate the standard errors for the slope and intercept coefficients (SE(b0) and SE(b1)): Compute the standard errors of the slope and intercept coefficients using the following formulas:
-
-    
